@@ -29,7 +29,7 @@ class Program
         bool condition = true;
         bool inif = true;
         List<Variable> variables = new List<Variable>();
-        string path = @"skrypt.tr";
+        string path = @"script.tr";
         string[] lines = File.ReadAllLines(path);
         bool can = true;
 
