@@ -17,7 +17,6 @@ Installation: TorchLang does not require installation as it's an interpreted lan
 <b>Syntax:</b> Refer to the example code and the following syntax guidelines for writing TorchLang code.<br><br>
 <b>Syntax Guidelines:</b><br><br>
 <b>Variables:</b> Declare variables using the var keyword followed by the type and name.<br><br>
-<b>Comments:</b> Use // for single-line comments and /* */ for multi-line comments.<br><br>
 <b>Printing:</b> Output to the console using the print keyword.<br><br>
 <b>Control Flow:</b> Utilize standard control flow structures like if, goto, and loops.<br><br>
 <b>Random Number Generation:</b> Generate random numbers using the random keyword.<br><br>
