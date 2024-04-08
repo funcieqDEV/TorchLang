@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Threading;
@@ -38,7 +38,7 @@ class Program
         for (int i = 0; i < lines.Length; i++)
         {
             string line = lines[i];
-            if (line.StartsWith(":"))
+            if (line.StartsWith(":") && inif == true)
             {
                 string label = line.Substring(1);
                 labels[label] = i;
@@ -171,6 +171,12 @@ class Program
                     {
                         condition = (intstartvalue != intendvalue);
                     }
+                  else if(parts[1] == ">="){
+                      condition = (intstartvalue >= intendvalue);
+                  }
+                  else if(parts[1] == "<="){
+                    condition = (intstartvalue <= intendvalue);
+                  }
                     else if (parts[1] == ">")
                     {
                         condition = (intstartvalue > intendvalue);
@@ -211,124 +217,118 @@ class Program
             {
                 Console.Clear();
             }
-            else if (line.StartsWith("set ") && inif == true)
-            {
-                Random rnd = new Random();
-                string modifiedLine = line.Substring(4);
-                string[] parts = modifiedLine.Split(' ');
-                string strvalue;
+          else if (line.StartsWith("set ") && inif == true)
+          {
+              Random rnd = new Random();
+              string modifiedLine = line.Substring(4);
+              string[] parts = modifiedLine.Split(' ');
 
-                string variableName = parts[0];
-                string operation = parts[1];
-                int result = 0;
-                if(parts.Length == 4)
-                {
-                    foreach(var old in variables) {
-                        if (parts[3] == old.Name) { 
-                        if(old.intvalue != 0)
-                            {
-                                ivalue = old.intvalue;
-                            }
-                        else
-                            {
-                                strvalue = old.Value;
-                            }
-                        }
-                    }
-                }
+              string variableName = parts[0];
+              string operation = parts[1];
+              int result = 0;
 
-                if (parts.Length >= 3)
-                {
-                    int operand;
+              // Sprawdź, czy wartość jest inną zmienną
+              Variable sourceVariable = variables.Find(v => v.Name == parts[2]);
 
-                    if (int.TryParse(parts[2], out operand))
-                    {
-                        foreach (var old in variables)
-                        {
-                            if (old.Name == variableName)
-                            {
-                                switch (operation)
-                                {
-                                    case "=":
-                                        old.intvalue = operand;
-                                        break;
-                                    case "+=":
-                                        old.intvalue += operand;
-                                        break;
-                                    case "-=":
-                                        if(ivalue != 0)
-                                        {
-                                            operand = ivalue;
-                                        }
-                                        old.intvalue -= operand;
-                                        ivalue = 0;
-                                        break;
-                                    case "*=":
-                                        old.intvalue *= operand;
-                                        break;
-                                    case "/=":
-                                        if (operand != 0)
-                                            old.intvalue /= operand;
-                                        else
-                                            Console.WriteLine("Error: Division by zero.");
-                                        break;
-                                    case "random":
-                                        if (parts.Length == 4) 
-                                        {
-                                            int minValue, maxValue;
-                                            if (int.TryParse(parts[2], out minValue) && int.TryParse(parts[3], out maxValue))
-                                            {
-                                                if(maxValue >= minValue) {  
-                                                    int value = rnd.Next(minValue, maxValue + 1);
-                                                foreach (var old1 in variables)
-                                                {
-                                                    if (old1.Name == variableName)
-                                                    {
-                                                        old1.intvalue = value;
-                                                        break;
-                                                    }
-                                                }
+              // Sprawdź, czy wartość zmiennej docelowej istnieje
+              Variable targetVariable = variables.Find(v => v.Name == variableName);
 
-                                                }
-                                                else
-                                                {
-                                                    Console.WriteLine("Error: Min value cannot be greater than max Value.");
-                                                }
-                                               
-                                                
-                                            }
-                                           
-                                           else
-                                            {
-                                                Console.WriteLine("Error: Invalid arguments for random operation.");
-                                           }
-                                        }
-                                        else
-                                        {
-                                            Console.WriteLine("Error: Invalid number of arguments for random operation.");
-                                        }
-                                        break;
+              if (targetVariable != null)
+              {
+                  if (sourceVariable != null)
+                  {
+                      // Jeśli wartość jest inną zmienną, dodaj jej wartość do wartości zmiennej docelowej
+                      switch (operation)
+                      {
+                          case "+=":
+                              targetVariable.intvalue += sourceVariable.intvalue;
+                              break;
+                          case "-=":
+                              targetVariable.intvalue -= sourceVariable.intvalue;
+                              break;
+                          case "*=":
+                              targetVariable.intvalue *= sourceVariable.intvalue;
+                              break;
+                          case "/=":
+                              if (sourceVariable.intvalue != 0)
+                                  targetVariable.intvalue /= sourceVariable.intvalue;
+                              else
+                                  Console.WriteLine("Error: Division by zero.");
+                              break;
+                          default:
+                              Console.WriteLine("Error: Invalid operation.");
+                              break;
+                      }
+                  }
+                  else
+                  {
+                      // Jeśli wartość nie jest inną zmienną, wykonaj operację na wartości liczbowej
+                      int operand;
+                      if (int.TryParse(parts[2], out operand))
+                      {
+                          switch (operation)
+                          {
+                              case "=":
+                                  targetVariable.intvalue = operand;
+                                  break;
+                              case "+=":
+                                  targetVariable.intvalue += operand;
+                                  break;
+                              case "-=":
+                                  targetVariable.intvalue -= operand;
+                                  break;
+                              case "*=":
+                                  targetVariable.intvalue *= operand;
+                                  break;
+                              case "/=":
+                                  if (operand != 0)
+                                      targetVariable.intvalue /= operand;
+                                  else
+                                      Console.WriteLine("Error: Division by zero.");
+                                  break;
+                              case "random":
+                                  if (parts.Length == 4)
+                                  {
+                                      int minValue, maxValue;
+                                      if (int.TryParse(parts[2], out minValue) && int.TryParse(parts[3], out maxValue))
+                                      {
+                                          if (maxValue >= minValue)
+                                          {
+                                              targetVariable.intvalue = rnd.Next(minValue, maxValue + 1);
+                                          }
+                                          else
+                                          {
+                                              Console.WriteLine("Error: Min value cannot be greater than max Value.");
+                                          }
+                                      }
+                                      else
+                                      {
+                                          Console.WriteLine("Error: Invalid arguments for random operation.");
+                                      }
+                                  }
+                                  else
+                                  {
+                                      Console.WriteLine("Error: Invalid number of arguments for random operation.");
+                                  }
+                                  break;
+                              default:
+                                  Console.WriteLine("Error: Invalid operation.");
+                                  break;
+                          }
+                      }
+                      else
+                      {
+                          Console.WriteLine("Error: Invalid operand.");
+                      }
+                  }
+              }
+              else
+              {
+                  Console.WriteLine($"Error: Variable '{variableName}' not found.");
+              }
+          }
 
-                                    default:
-                                        Console.WriteLine("Error: Invalid operation.");
-                                        break;
-                                }
-                                result = old.intvalue;
-                                break;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("Error: Invalid operand.");
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Error: Incomplete operation.");
-                }
-            }
-            else if (line.StartsWith("exit"))
+          else if (line.StartsWith("exit") && inif == true)
             {
                 System.Environment.Exit(0);
             }
