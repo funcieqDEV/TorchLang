@@ -1,7 +1,6 @@
 <center>
   
   <h1><b>TorchLang version 1.0.0</b></h1>
-  <p>Copyright © 2024 TorchLang. All rights reserved.</p>
 <p>TorchLang
 TorchLang is a simple, easy-to-learn programming language designed for quick scripting and small-scale projects.
 <br>
@@ -26,34 +25,26 @@ Getting Started:<br>
 Installation: TorchLang does not require installation as it's an interpreted language. Simply create a text file with a .tr extension and start writing your code.<br><br>
 
 Running Code: run TorchLang as follows: you must have the script.tr file in the same directory as the TorchLang interpreter <br><br>
-Syntax: Refer to the example code and the following syntax guidelines for writing TorchLang code.
-Syntax Guidelines:
-Variables: Declare variables using the var keyword followed by the type and name.
-Comments: Use // for single-line comments and /* */ for multi-line comments.
-Printing: Output to the console using the print keyword.
-Control Flow: Utilize standard control flow structures like if, goto, and loops.
-Random Number Generation: Generate random numbers using the random keyword.
-Example Programs:
-Hello World:
-print "Hello, World!"
-Loop Example:
-torch
-Copy code
-var int i = 0
-
-:start
-if %i% < 5
-    print %i%
-    set i += 1
-    goto start
-Documentation:
-For more detailed documentation and language specifications, refer to the official TorchLang documentation.
-
-Contributions:
-Contributions to TorchLang are welcome! Feel free to fork the repository and submit pull requests with new features or improvements.
-
+Syntax: Refer to the example code and the following syntax guidelines for writing TorchLang code.<br>
+Syntax Guidelines:<br>
+Variables: Declare variables using the var keyword followed by the type and name.<br>
+Comments: Use // for single-line comments and /* */ for multi-line comments.<br>
+Printing: Output to the console using the print keyword.<br>
+Control Flow: Utilize standard control flow structures like if, goto, and loops.<br>
+Random Number Generation: Generate random numbers using the random keyword.<br>
+Example Programs:<br><br>
+Hello World:<br>
+print Hello, World!<br><br>
+Loop Example:<br><br>
+var int i = 0<br>
+<br>
+:start<br>
+if %i% < 5<br>
+print %i<br>
+set i += 1<br>
+goto start<br>
+<br>
+<br>
 License:
 TorchLang is open-source and released under the MIT License. Feel free to use, modify, and distribute it as per the terms of the license.</p>
-
-  
   </center>
