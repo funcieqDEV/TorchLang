@@ -29,7 +29,7 @@ class Program
         bool condition = true;
         bool inif = true;
         List<Variable> variables = new List<Variable>();
-        string path = @"C:\Users\2022_tp_1.SALAI3\Desktop\jakab\TorchScript\TorchScript\skrypt.tr";
+        string path = @"skrypt.tr";
         string[] lines = File.ReadAllLines(path);
         bool can = true;
 
