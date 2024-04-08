@@ -25,7 +25,7 @@ Printing: Print output to the console using the print keyword.<br><br><br>
 Getting Started:<br>
 Installation: TorchLang does not require installation as it's an interpreted language. Simply create a text file with a .tr extension and start writing your code.<br><br>
 
-Running Code: Run TorchLang code by executing the interpreter with your script file as an argument.
+Running Code: run TorchLang as follows: you must have the script.tr file in the same directory as the TorchLang interpreter <br><br>
 Syntax: Refer to the example code and the following syntax guidelines for writing TorchLang code.
 Syntax Guidelines:
 Variables: Declare variables using the var keyword followed by the type and name.
