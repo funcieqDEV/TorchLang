@@ -16,12 +16,12 @@ print %i%. Hello, World!!!<br>
 end<br>
 set i += 1<br>
 set howlong -= 1<br>
-goto start<br>
-Features:
-Variable Declaration: Declare variables using the var keyword followed by the variable type and name.
-Random Number Generation: Generate random numbers using the random keyword.
-Control Flow: Use standard control flow structures like if, goto, and loops.
-Printing: Print output to the console using the print keyword.
+goto start<br><br><br>
+Features:<br>
+Variable Declaration: Declare variables using the var keyword followed by the variable type and name.<br>
+Random Number Generation: Generate random numbers using the random keyword.<br>
+Control Flow: Use standard control flow structures like if, goto, and loops.<br>
+Printing: Print output to the console using the print keyword.<br><br>
 Getting Started:
 Installation: TorchLang does not require installation as it's an interpreted language. Simply create a text file with a .torch extension and start writing your code.
 
