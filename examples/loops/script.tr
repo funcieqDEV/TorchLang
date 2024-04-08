@@ -1,7 +1,8 @@
 var int i = 0
+var int stop = 100
 
 :start
-if %i% > 100
+if %i% > %stop%
 print %i%
 set i += 1
 end
