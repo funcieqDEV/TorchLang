@@ -21,9 +21,9 @@ Features:<br>
 Variable Declaration: Declare variables using the var keyword followed by the variable type and name.<br>
 Random Number Generation: Generate random numbers using the random keyword.<br>
 Control Flow: Use standard control flow structures like if, goto, and loops.<br>
-Printing: Print output to the console using the print keyword.<br><br>
-Getting Started:
-Installation: TorchLang does not require installation as it's an interpreted language. Simply create a text file with a .torch extension and start writing your code.
+Printing: Print output to the console using the print keyword.<br><br><br>
+Getting Started:<br>
+Installation: TorchLang does not require installation as it's an interpreted language. Simply create a text file with a .tr extension and start writing your code.<br><br>
 
 Running Code: Run TorchLang code by executing the interpreter with your script file as an argument.
 Syntax: Refer to the example code and the following syntax guidelines for writing TorchLang code.
