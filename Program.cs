@@ -227,10 +227,8 @@ class Program
               string operation = parts[1];
               int result = 0;
 
-              // Sprawdź, czy wartość jest inną zmienną
               Variable sourceVariable = variables.Find(v => v.Name == parts[2]);
 
-              // Sprawdź, czy wartość zmiennej docelowej istnieje
               Variable targetVariable = variables.Find(v => v.Name == variableName);
 
               if (targetVariable != null)
@@ -262,7 +260,7 @@ class Program
                   }
                   else
                   {
-                      // Jeśli wartość nie jest inną zmienną, wykonaj operację na wartości liczbowej
+                      
                       int operand;
                       if (int.TryParse(parts[2], out operand))
                       {
