@@ -4,21 +4,19 @@
   <p>Copyright © 2024 TorchLang. All rights reserved.</p>
 <p>TorchLang
 TorchLang is a simple, easy-to-learn programming language designed for quick scripting and small-scale projects.
-
-Example Code:
-torch
-Copy code
-var int howlong = 1
-var int i = 1
-set howlong random 5 20
-
-:start
-if %howlong% > 0
-print %i%. Hello, World!!!
-end
-set i += 1
-set howlong -= 1
-goto start
+<br>
+Example Code:<br>
+var int howlong = 1<br>
+var int i = 1<br>
+set howlong random 5 20<br>
+<br>
+:start<br>
+if %howlong% > 0<br>
+print %i%. Hello, World!!!<br>
+end<br>
+set i += 1<br>
+set howlong -= 1<br>
+goto start<br>
 Features:
 Variable Declaration: Declare variables using the var keyword followed by the variable type and name.
 Random Number Generation: Generate random numbers using the random keyword.
