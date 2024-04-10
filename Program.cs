@@ -335,6 +335,9 @@ class Program
             {
                 System.Environment.Exit(0);
             }
+          else if(line.StartsWith("pause") && inif == true){
+            Console.Read();
+          }
 
             currentLine++;
         }
