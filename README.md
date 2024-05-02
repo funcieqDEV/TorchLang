@@ -9,6 +9,18 @@ TorchLang is a simple, easy-to-learn programming language designed for quick scr
 Variable Declaration: Declare variables using the var keyword followed by the variable type and name.<br><br>
 Random Number Generation: Generate random numbers using the random keyword.<br><br>
 Control Flow: Use standard control flow structures like if, goto, and loops.<br><br>
+Console colors: Change console colors very simple use: color foreground|background color<br>
+<b>Color list:</b><br>
+<ol>
+  <li>red</li>
+  <li>blue</li>
+  <li>green</li>
+  <li>white</li>
+  <li>black</li>
+  <li>yellow</li>
+  <li>cyan</li>
+</ol>
+    <br><br>
 Printing: Print output to the console using the print keyword.<br><br><br>
 <b>Getting Started:</b><br>
 Installation: TorchLang does not require installation as it's an interpreted language. Simply create a text file with a .tr extension and start writing your code.<br><br>
