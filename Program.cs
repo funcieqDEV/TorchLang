@@ -27,12 +27,12 @@ class Program
     {
 
 
-      
+
         int ivalue = 0;
         bool condition = true;
         bool inif = true;
         List<Variable> variables = new List<Variable>();
-        string path = @"script.tr";
+        string path = @"C:\Users\HP\source\repos\TorchLang\TorchLang\script.tr";
         string[] lines = File.ReadAllLines(path);
         bool can = true;
 
@@ -108,7 +108,7 @@ class Program
             {
                 string modifiedLine = line.Substring(6);
                 foreach (var old in variables)
-                {  
+                {
                     if (old.Name == modifiedLine)
                     {
                         if (old.intvalue != null)
@@ -213,6 +213,65 @@ class Program
                 }
 
                 inif = condition;
+            }
+            else if (line.StartsWith("color "))
+            {
+                string[] words = line.Split(' ');
+                if (words[1] == "foreground")
+                {
+                    switch (words[2])
+                    {
+                        case "red":
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            break;
+                        case "blue":
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            break;
+                        case "green":
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            break;
+                        case "yellow":
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            break;
+                        case "cyan":
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            break;
+                        case "white":
+                            Console.ForegroundColor = ConsoleColor.White;
+                            break;
+                        case "black":
+                            Console.ForegroundColor = ConsoleColor.Black;
+                            break;
+                    }
+                }
+                else if (words[1] == "background")
+                {
+                    switch (words[2])
+                    {
+                        case "red":
+                            Console.BackgroundColor = ConsoleColor.Red;
+                            break;
+                        case "blue":
+                            Console.BackgroundColor = ConsoleColor.Blue;
+                            break;
+                        case "green":
+                            Console.BackgroundColor = ConsoleColor.Green;
+                            break;
+                        case "yellow":
+                            Console.BackgroundColor = ConsoleColor.Yellow;
+                            break;
+                        case "cyan":
+                            Console.BackgroundColor = ConsoleColor.Cyan;
+                            break;
+                        case "white":
+                            Console.BackgroundColor = ConsoleColor.White;
+                            break;
+                        case "black":
+                            Console.BackgroundColor = ConsoleColor.Black;
+                            break;
+                    }
+                }
+
             }
             else if (line.StartsWith("end"))
             {
@@ -335,9 +394,10 @@ class Program
             {
                 System.Environment.Exit(0);
             }
-          else if(line.StartsWith("pause") && inif == true){
-            Console.Read();
-          }
+            else if (line.StartsWith("pause") && inif == true)
+            {
+                Console.Read();
+            }
 
             currentLine++;
         }
