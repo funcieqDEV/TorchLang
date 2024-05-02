@@ -1,6 +1,6 @@
 <center>
   
-  <h1><b>TorchLang version 1.0.0</b></h1>
+  <h1><b>TorchLang version 1.0.1</b></h1>
 <p><b>TorchLang</b><br>
 TorchLang is a simple, easy-to-learn programming language designed for quick scripting and small-scale projects.
 <br>
