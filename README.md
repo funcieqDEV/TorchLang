@@ -34,4 +34,10 @@ Installation: TorchLang does not require installation as it's an interpreted lan
 <b>Random Number Generation:</b> Generate random numbers using the random keyword.<br><br>
 <b>License:</b>
 TorchLang is open-source and released under the MIT License. Feel free to use, modify, and distribute it as per the terms of the license.</p>
+
+<H3 style="font-family: Arial">Example code</H3>
+<div bgcolor="Black">
+<p style="color: white">
+</p>
+</div>
   </center>
