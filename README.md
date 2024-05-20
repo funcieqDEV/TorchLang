@@ -37,15 +37,7 @@ TorchLang is open-source and released under the MIT License. Feel free to use, m
 
 <H3 style="font-family: Arial">Example code</H3>
 <div bgcolor="Black" id="code-block">
-  <style>
-    #code {
-      color: white;
-      }
-    #code-block{
-      background-color: black;
-      }
-  </style>
-<p style="color: white" id="code">
+
 var str = string variable<br>
 var int = int variable<br>
 </p>
