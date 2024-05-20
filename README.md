@@ -36,8 +36,16 @@ Installation: TorchLang does not require installation as it's an interpreted lan
 TorchLang is open-source and released under the MIT License. Feel free to use, modify, and distribute it as per the terms of the license.</p>
 
 <H3 style="font-family: Arial">Example code</H3>
-<div bgcolor="Black">
-<p style="color: white">
+<div bgcolor="Black" id="code-block">
+  <style>
+    #code {
+      color: white;
+      }
+    #code-block{
+      background-color: black;
+      }
+  </style>
+<p style="color: white" id="code">
 var str = string variable<br>
 var int = int variable<br>
 </p>
