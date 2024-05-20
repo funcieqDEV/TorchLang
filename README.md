@@ -38,8 +38,8 @@ TorchLang is open-source and released under the MIT License. Feel free to use, m
 <H3 style="font-family: Arial">Example code</H3>
 <div bgcolor="Black">
 <p style="color: white">
-var str = string variable
-var int = int variable
+var str = string variable<br>
+var int = int variable<br>
 </p>
 </div>
   </center>
